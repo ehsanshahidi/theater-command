@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theater Command</title>
+    <script type="module" crossorigin src="./assets/index-hp0nrk4V.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BvkyOUrq.css">
+  </head>
+  <body>
+    <canvas id="view"></canvas>
+
+    <div id="hud" hidden>
+      <div id="topBar">
+        <span id="factionName"></span>
+        <span id="money"></span>
+        <span id="power"></span>
+        <span id="clock"></span>
+      </div>
+      <div id="hint"></div>
+      <div id="messages"></div>
+      <canvas id="minimap" width="220" height="220"></canvas>
+      <div id="sidebar">
+        <div id="selectionPanel" class="panel"></div>
+        <div id="buildPanel" class="panel"></div>
+      </div>
+      <div id="selectionBox"></div>
+      <div id="flash"></div>
+    </div>
+
+    <div id="menu" class="overlay">
+      <div class="dialog">
+        <h1>Theater Command</h1>
+        <p class="muted">Extract oil, build your base, and command land and air forces against rival powers. Plays best on a desktop with a mouse and keyboard.</p>
+        <div id="factionCards"></div>
+        <div class="players">
+          <span class="playersHeading">Player</span><span class="playersHeading">Army</span><span class="playersHeading">Team</span>
+          <span class="playerName">You</span><span id="yourArmy" class="yourArmy"></span><select id="team0" aria-label="Your team"></select>
+          <span class="playerName">Opponent 1</span><select id="opponent1" aria-label="Opponent 1 army"></select><select id="team1" aria-label="Opponent 1 team"></select>
+          <span class="playerName">Opponent 2</span><select id="opponent2" aria-label="Opponent 2 army"></select><select id="team2" aria-label="Opponent 2 team"></select>
+          <span class="playerName">Opponent 3</span><select id="opponent3" aria-label="Opponent 3 army"></select><select id="team3" aria-label="Opponent 3 team"></select>
+        </div>
+        <div class="options">
+          <label>Difficulty
+            <select id="difficulty">
+              <option value="easy" selected>Easy</option>
+              <option value="normal">Normal</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+          <label>Terrain <select id="terrain"></select></label>
+          <label>Starting credits
+            <select id="credits">
+              <option value="6000" selected>$6,000</option>
+              <option value="12000">$12,000</option>
+              <option value="25000">$25,000</option>
+              <option value="50000">$50,000</option>
+            </select>
+          </label>
+        </div>
+        <p id="setupError" class="setupError" hidden></p>
+        <button id="startButton" class="primary">Start skirmish</button>
+      </div>
+    </div>
+
+    <div id="armyBuilder" class="overlay" hidden></div>
+
+    <div id="pauseMenu" class="overlay" hidden>
+      <div class="dialog small">
+        <h1>Paused</h1>
+        <p id="pauseDetail" class="muted"></p>
+        <div class="menuButtons">
+          <button id="resumeButton" class="primary">Resume</button>
+          <button id="pauseRestartButton">Restart match</button>
+          <button id="pauseMenuButton">Main menu</button>
+          <button id="soundButton">Sound: on</button>
+        </div>
+        <p class="muted">Esc or P resumes. Left-click or drag selects, right-click moves or attacks. A attack-move, T patrol, S stop, H home, Q/E rotate, arrows pan, wheel zooms.</p>
+      </div>
+    </div>
+
+    <div id="endScreen" class="overlay" hidden>
+      <div class="dialog small">
+        <h1 id="endTitle"></h1>
+        <p id="endDetail" class="muted"></p>
+        <div class="menuButtons">
+          <button id="restartButton" class="primary">Play again</button>
+          <button id="endMenuButton">Main menu</button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
